@@ -66,6 +66,185 @@ h1{font-size:clamp(17px,4.4vw,28px);line-height:1.35;margin:0;color:#ffd45d;text
 }
 @media (orientation:landscape) and (max-height:430px){.game{padding:2px;grid-template-rows:auto auto minmax(52px,.78fr) auto auto minmax(74px,1fr) auto;column-gap:4px;row-gap:1px}.game>header{padding:1px}h1{font-size:15px}.stats{margin:1px 0}.stat strong{font-size:14px}.scene{padding:2px;gap:3px}.speech{font-size:9px;padding:3px}.section-title{font-size:10px;margin:0}.order{padding:2px 4px}.order strong{font-size:11px}.order .hint{font-size:8px}.tray{padding:2px}.tray-item{font-size:12px;padding:1px 2px}.tray-item img{width:20px;height:18px}.product .emoji{height:22px}.product .emoji img{max-width:27px}.product .name{font-size:7px}.product .count{font-size:7px;padding:0 2px}.actions{padding:1px 0}.action{min-height:25px;font-size:9px}.bell{font-size:11px}.message{font-size:8px}}
 
+
+/* v12: landscape readability pass — larger touch targets and text */
+@media (orientation:landscape) and (max-height:560px){
+  .game{padding:5px;column-gap:8px;row-gap:2px}
+  .game>header{padding:4px 6px}
+  h1{font-size:clamp(18px,2.6vw,25px);line-height:1.2}
+  .stats{gap:6px;margin:4px 0}
+  .stat{padding:4px 2px}
+  .stat small{font-size:clamp(11px,1.5vw,14px)}
+  .stat strong{font-size:clamp(19px,2.7vw,26px)}
+  .scene{grid-template-columns:clamp(96px,14vw,150px) minmax(0,1fr);gap:7px;padding:4px;min-height:0}
+  .mascot{min-height:0}
+  .mascot img{padding:2px}
+  .speech{font-size:clamp(12px,1.6vw,16px);padding:7px 9px;line-height:1.3}
+  .section-title{font-size:clamp(12px,1.65vw,16px);margin:4px 0 3px}
+  .order{padding:7px 9px;gap:8px;min-height:62px}
+  .order strong{font-size:clamp(13px,1.8vw,18px)}
+  .order .hint{font-size:clamp(10px,1.35vw,13px);margin-top:3px}
+  .tray{height:82px;min-height:82px;padding:5px}
+  .tray-top{font-size:clamp(11px,1.4vw,14px)}
+  .empty{font-size:clamp(12px,1.5vw,15px)}
+  .tray-item{font-size:18px;padding:3px 5px}
+  .tray-item img{width:38px;height:34px}
+  .tray-item small{font-size:10px}
+  .products{gap:5px;align-content:stretch}
+  .product{min-height:48px;padding:3px 2px;border-width:2px}
+  .product .emoji{height:34px}
+  .product .emoji img{max-width:46px}
+  .product .name{font-size:clamp(10px,1.3vw,13px);margin-top:3px;line-height:1.15}
+  .product .count{font-size:clamp(10px,1.25vw,12px);padding:2px 4px;margin-top:2px}
+  .actions{gap:5px;padding:4px 0 calc(4px + env(safe-area-inset-bottom))}
+  .action{min-height:39px;font-size:clamp(12px,1.6vw,16px)}
+  .bell{font-size:clamp(14px,1.9vw,19px)}
+  .message{font-size:clamp(10px,1.3vw,13px);min-height:20px;padding:3px}
+}
+@media (orientation:landscape) and (max-height:430px){
+  .game{grid-template-rows:auto auto minmax(76px,1fr) auto auto minmax(92px,1.15fr) auto;padding:3px;row-gap:1px}
+  .game>header{padding:2px 4px}
+  h1{font-size:17px}
+  .stats{margin:2px 0}
+  .stat{padding:2px}
+  .stat small{font-size:11px}
+  .stat strong{font-size:18px}
+  .scene{grid-template-columns:clamp(84px,12vw,112px) minmax(0,1fr);padding:3px;gap:4px}
+  .speech{font-size:11px;padding:4px 6px}
+  .section-title{font-size:12px;margin:2px 0}
+  .order{min-height:52px;padding:4px 6px}
+  .order strong{font-size:12px}
+  .order .hint{font-size:10px}
+  .tray{height:66px;min-height:66px;padding:3px}
+  .tray-top{font-size:10px}
+  .empty{font-size:11px}
+  .products{gap:3px}
+  .product{min-height:39px;padding:2px}
+  .product .emoji{height:27px}
+  .product .emoji img{max-width:36px}
+  .product .name{font-size:9px}
+  .product .count{font-size:9px;padding:1px 3px}
+  .actions{padding:2px 0;gap:3px}
+  .action{min-height:32px;font-size:11px}
+  .bell{font-size:14px}
+  .message{font-size:9px;min-height:15px;padding:1px}
+}
+
+/* v13: landscape layout correction — use real viewport efficiently */
+@media (orientation:landscape) and (max-height:560px){
+ .game{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);grid-template-rows:auto auto minmax(92px,1.05fr) minmax(82px,.9fr) auto auto;column-gap:7px;row-gap:3px;align-content:stretch;padding:4px;height:100dvh;overflow:hidden}
+ .game>header{grid-column:1/-1;grid-row:1;padding:2px 5px}
+ h1{font-size:clamp(17px,2.8vw,24px);line-height:1.15}
+ .subtitle{display:none}
+ .stats{grid-column:1/-1;grid-row:2;margin:1px 0;gap:4px}
+ .stat{padding:2px}.stat small{font-size:clamp(10px,1.5vw,13px)}.stat strong{font-size:clamp(17px,2.4vw,23px)}
+ .scene{grid-column:1;grid-row:3;grid-template-columns:clamp(88px,13vw,132px) minmax(0,1fr);height:100%;min-height:0;max-height:none;padding:3px;gap:5px}
+ .mascot{min-height:0}.speech{font-size:clamp(12px,1.6vw,16px);padding:5px 7px;line-height:1.25}
+ /* Explicitly place each panel; avoid nth-of-type grid-row drift */
+ .game>.section-title:nth-child(4){grid-column:2;grid-row:3;align-self:start;margin:0;font-size:clamp(12px,1.6vw,16px)}
+ .order{grid-column:2;grid-row:3;align-self:end;min-height:0;padding:7px 9px;margin-top:23px;gap:6px}
+ .order strong{font-size:clamp(14px,1.8vw,19px);line-height:1.2}.order .hint{font-size:clamp(11px,1.35vw,14px);margin-top:4px}
+ .game>.section-title:nth-child(6){grid-column:1;grid-row:4;align-self:start;margin:0;font-size:clamp(12px,1.6vw,16px)}
+ .tray{grid-column:1;grid-row:4;align-self:end;height:calc(100% - 20px);min-height:54px;margin:20px 0 0;padding:4px}
+ .tray-top{font-size:clamp(11px,1.35vw,14px)}.tray-items{gap:4px}.tray-item{font-size:17px;padding:2px 4px}.tray-item img{width:34px;height:29px}.tray-item small{font-size:10px}.empty{font-size:clamp(12px,1.4vw,15px)}
+ .game>.section-title:nth-child(8){grid-column:2;grid-row:4;align-self:start;margin:0;font-size:clamp(12px,1.6vw,16px)}
+ .products{grid-column:2;grid-row:4 / span 2;align-self:end;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:5px;min-height:0;max-height:none;overflow:visible;padding:0;margin-top:22px;height:calc(100% - 22px)}
+ .product{display:grid;grid-template-rows:minmax(0,1fr) auto auto;align-content:center;justify-items:center;min-height:0;height:100%;padding:3px 2px;line-height:1.05}
+ .product .emoji{height:clamp(27px,6.2vh,44px);width:100%;min-height:0}.product .emoji img{max-width:clamp(30px,5vw,52px);width:100%;height:100%}
+ .product .name{font-size:clamp(10px,1.35vw,14px);margin-top:3px;line-height:1.1;overflow-wrap:anywhere}.product .count{font-size:clamp(10px,1.25vw,13px);padding:2px 4px;margin-top:2px;line-height:1.1}
+ .actions{grid-column:1;grid-row:5;display:grid;grid-template-columns:1fr 1fr;gap:4px;margin:0;padding:2px 0;background:transparent;position:static;align-self:stretch}
+ .action{min-width:0;min-height:34px;font-size:clamp(10px,1.55vw,15px);padding:3px}.bell{font-size:clamp(12px,1.8vw,17px)}
+ .message{grid-column:2;grid-row:5;align-self:center;min-height:0;font-size:clamp(10px,1.25vw,13px);padding:2px;line-height:1.15}
+ .footer{display:none}
+}
+@media (orientation:landscape) and (max-height:430px){
+ .game{grid-template-rows:auto auto minmax(84px,1fr) minmax(74px,.9fr) auto auto;gap:2px;padding:3px}
+ .game>header{padding:1px 4px}h1{font-size:16px}.stats{margin:1px 0}.stat small{font-size:10px}.stat strong{font-size:16px}
+ .scene{grid-template-columns:clamp(78px,12vw,105px) minmax(0,1fr);padding:2px;gap:3px}.speech{font-size:11px;padding:3px 4px}
+ .order{padding:4px 6px;margin-top:20px}.order strong{font-size:12px}.order .hint{font-size:10px}
+ .tray{min-height:48px;padding:2px;margin-top:18px}.tray-top{font-size:10px}.tray-item img{width:26px;height:23px}.tray-item small{font-size:9px}
+ .products{gap:3px;margin-top:19px;height:calc(100% - 19px)}.product{padding:2px}.product .emoji{height:clamp(23px,5.5vh,30px)}.product .emoji img{max-width:34px}.product .name{font-size:9px}.product .count{font-size:9px;padding:1px 3px}
+ .actions{gap:3px}.action{min-height:28px;font-size:10px;padding:2px}.bell{font-size:12px}.message{font-size:9px}
+}
+
+
+/* v14: stable tray item cards; prevent icon/label overlap when tray fills */
+.tray-items {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-content: flex-start !important;
+  align-items: flex-start !important;
+  gap: 5px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+.tray-items .tray-item {
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex: 0 0 clamp(72px, 12.5%, 112px) !important;
+  width: clamp(72px, 12.5%, 112px) !important;
+  min-width: 0 !important;
+  height: 62px !important;
+  min-height: 62px !important;
+  max-height: 62px !important;
+  padding: 4px 3px 3px !important;
+  margin: 0 !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 2px !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  white-space: normal !important;
+}
+.tray-items .tray-item img {
+  display: block !important;
+  flex: 0 0 30px !important;
+  width: 34px !important;
+  height: 30px !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+}
+.tray-items .tray-item small {
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: clamp(9px, 1vw, 11px) !important;
+  line-height: 12px !important;
+  height: 12px !important;
+  min-height: 12px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .tray-items .tray-item {
+    height: 54px !important;
+    min-height: 54px !important;
+    max-height: 54px !important;
+    flex-basis: clamp(68px, 12.5%, 104px) !important;
+    width: clamp(68px, 12.5%, 104px) !important;
+    padding: 2px !important;
+  }
+  .tray-items .tray-item img {
+    flex-basis: 25px !important;
+    width: 28px !important;
+    height: 25px !important;
+  }
+  .tray-items .tray-item small {
+    font-size: 9px !important;
+    line-height: 11px !important;
+    height: 11px !important;
+    min-height: 11px !important;
+  }
+}
 </style>
 </head>
 <body>
